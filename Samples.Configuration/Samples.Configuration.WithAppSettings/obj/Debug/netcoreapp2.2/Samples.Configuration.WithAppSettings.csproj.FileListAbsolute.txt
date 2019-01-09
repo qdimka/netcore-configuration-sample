@@ -1,0 +1,3 @@
+C:\Users\qdimk\source\repos\netcore-configuration-sample\Samples.Configuration\Samples.Configuration.WithAppSettings\obj\Debug\netcoreapp2.2\Samples.Configuration.WithAppSettings.csproj.CoreCompileInputs.cache
+C:\Users\qdimk\source\repos\netcore-configuration-sample\Samples.Configuration\Samples.Configuration.WithAppSettings\obj\Debug\netcoreapp2.2\Samples.Configuration.WithAppSettings.AssemblyInfoInputs.cache
+C:\Users\qdimk\source\repos\netcore-configuration-sample\Samples.Configuration\Samples.Configuration.WithAppSettings\obj\Debug\netcoreapp2.2\Samples.Configuration.WithAppSettings.AssemblyInfo.cs
