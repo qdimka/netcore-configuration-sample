@@ -20,7 +20,7 @@
     "Samples.Configuration.Web": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/configuration/file",
       "environmentVariables": {
         "SettingsEnvironment__Key": "I am Environment",
         "ASPNETCORE_ENVIRONMENT": "Development"

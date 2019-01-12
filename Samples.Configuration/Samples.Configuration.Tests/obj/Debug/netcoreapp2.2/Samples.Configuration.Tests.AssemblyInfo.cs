@@ -11,6 +11,8 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Samples.Configuration.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\qdimk\\source\\repos\\netcore-configuration-sample\\Samples.Configuration\\Sa" +
+    "mples.Configuration.Web", "Samples.Configuration.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Samples.Configuration.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
