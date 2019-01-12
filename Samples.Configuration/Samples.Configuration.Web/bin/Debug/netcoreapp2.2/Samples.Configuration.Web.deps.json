@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "cb82fb8b69a5daf9931158141fecfaf15964dcc7"
+    "signature": "266224f75af4ee2282fa68c4cbc616f23dbc2e8e"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.0.2105168",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
+          "YamlDotNet": "5.3.0"
         },
         "runtime": {
           "Samples.Configuration.Web.dll": {}
@@ -513,6 +514,17 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "YamlDotNet/5.3.0": {
+        "runtime": {
+          "lib/netstandard1.3/YamlDotNet.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/YamlDotNet.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3717,6 +3729,13 @@
       "sha512": "sha512-xVt+I6e67HveLnImSVZlmL0Hl3OjsH5lQV6b5CJa/023Da+RsK4KOxVAWBv2CAy3jGtgENOCfcr2g8q5VLIA8g==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
+    },
+    "YamlDotNet/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RmVUs9DqUZtT6/eCaWbp73F6I3+eDgVjpMeELCBRNmA1cBWSYMo82dvwGqcsMCIoqC9vQxbq2yqEpUM0bLwnRw==",
+      "path": "yamldotnet/5.3.0",
+      "hashPath": "yamldotnet.5.3.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

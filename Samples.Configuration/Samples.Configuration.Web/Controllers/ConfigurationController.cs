@@ -43,5 +43,15 @@ namespace Samples.Configuration.Web.Controllers
                 key = _configuration["SettingsEnvironment:Key"]
             });
         }
+
+        [HttpGet("yaml")]
+        public IActionResult GetFromYaml()
+        {
+            return Ok(new
+            {
+                name = "SettingsYaml:Key",
+                key = _configuration["SettingsYaml:Key"]
+            });
+        }
     }
 }
