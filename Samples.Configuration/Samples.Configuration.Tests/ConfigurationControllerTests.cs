@@ -1,18 +1,23 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Samples.Configuration.Tests.Common;
 using Samples.Configuration.Web;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Samples.Configuration.Tests
 {
-    public class ConfigurationControllerTests : IClassFixture<WebApplicationFactory<Startup>>
+    public class ConfigurationControllerTests 
+        : TestBase
+        , IClassFixture<WebApplicationFactory<Startup>>
     {
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly HttpClient _client;
 
-        public ConfigurationControllerTests(ITestOutputHelper testOutputHelper, WebApplicationFactory<Startup> factory)
+        public ConfigurationControllerTests(ITestOutputHelper testOutputHelper, 
+            WebApplicationFactory<Startup> factory)
         {
             _testOutputHelper = testOutputHelper;
             _client = factory.CreateClient();

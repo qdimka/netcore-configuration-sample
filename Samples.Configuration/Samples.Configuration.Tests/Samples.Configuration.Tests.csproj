@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Samples.Configuration.Web\Samples.Configuration.Web.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
-
 </Project>
