@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Samples.Configuration.Web.Options;
 
 namespace Samples.Configuration.Web.Controllers
 {
@@ -8,10 +10,12 @@ namespace Samples.Configuration.Web.Controllers
     public class ConfigurationController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly IOptions<SettingsOptions> _options;
 
-        public ConfigurationController(IConfiguration configuration)
+        public ConfigurationController(IConfiguration configuration, IOptions<SettingsOptions> options)
         {
             _configuration = configuration;
+            _options = options;
         }
 
         [HttpGet("file")]
@@ -51,6 +55,16 @@ namespace Samples.Configuration.Web.Controllers
             {
                 name = "SettingsYaml:Key",
                 key = _configuration["SettingsYaml:Key"]
+            });
+        }
+
+        [HttpGet("options")]
+        public IActionResult GetFromOptions()
+        {
+            return Ok(new
+            {
+                name = "SettingsOptions:Key",
+                key = _options.Value.Key
             });
         }
     }

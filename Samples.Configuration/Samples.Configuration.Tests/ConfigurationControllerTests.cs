@@ -28,6 +28,7 @@ namespace Samples.Configuration.Tests
         [InlineData("api/configuration/secret", "I am Secret")]
         [InlineData("api/configuration/environment", "I am Environment")]
         [InlineData("api/configuration/yaml", "I am Yaml")]
+        [InlineData("api/configuration/options", "I am options")]
         public async Task Configuration_Should_Contains_Expected_Value(string url, string expectedValue)
         {
             var result = await _client.GetAsync(url);

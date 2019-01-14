@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Samples.Configuration.Web.Options;
 
 namespace Samples.Configuration.Web
 {
@@ -19,6 +20,7 @@ namespace Samples.Configuration.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.Configure<SettingsOptions>(Configuration.GetSection("SettingsOptions"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
