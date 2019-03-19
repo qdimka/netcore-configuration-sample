@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -11,7 +12,12 @@ namespace Samples.Configuration.Web
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            Configuration = new ConfigurationBuilder()
+                .AddInMemoryCollection(new Dictionary<string, string>
+                {
+                    { "key", "value"}
+                })
+                .Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -20,7 +26,7 @@ namespace Samples.Configuration.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.Configure<SettingsOptions>(Configuration.GetSection("SettingsOptions"));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

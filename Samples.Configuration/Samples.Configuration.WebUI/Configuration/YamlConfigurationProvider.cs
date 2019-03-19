@@ -4,7 +4,7 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using YamlDotNet.Serialization;
 
-namespace Samples.Configuration.Web.Configuration
+namespace Samples.Configuration.WebUI.Configuration
 {
     public class YamlConfigurationProvider : ConfigurationProvider
     {
@@ -42,12 +42,11 @@ namespace Samples.Configuration.Web.Configuration
                 case string value:
                     Data.Add(key, value);
                     break;
+                
                 case IDictionary<object, object> section:
                 {
                     foreach (var sectionPair in section)
-                    {
                         FillData(pair.Key.ToString(), sectionPair);
-                    }
 
                     break;
                 }

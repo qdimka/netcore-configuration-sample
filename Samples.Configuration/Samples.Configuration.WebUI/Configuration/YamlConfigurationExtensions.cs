@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 
-namespace Samples.Configuration.Web.Configuration
+namespace Samples.Configuration.WebUI.Configuration
 {
     public static class YamlConfigurationExtensions
     {
@@ -12,7 +12,7 @@ namespace Samples.Configuration.Web.Configuration
                 throw new ArgumentNullException(nameof(builder));
 
             if (string.IsNullOrEmpty(filePath))
-                throw new ArgumentException(nameof(filePath));
+                throw new ArgumentNullException(nameof(filePath));
 
             return builder
                 .Add(new YamlConfigurationSource(filePath));

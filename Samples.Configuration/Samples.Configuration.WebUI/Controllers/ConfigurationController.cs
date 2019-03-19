@@ -1,21 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Samples.Configuration.Web.Options;
+using Samples.Configuration.WebUI.Options;
 
-namespace Samples.Configuration.Web.Controllers
+namespace Samples.Configuration.WebUI.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class ConfigurationController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-        private readonly IOptions<SettingsOptions> _options;
-
-        public ConfigurationController(IConfiguration configuration, IOptions<SettingsOptions> options)
+        
+        public ConfigurationController(IConfiguration configuration)
         {
             _configuration = configuration;
-            _options = options;
         }
 
         [HttpGet("file")]
@@ -55,16 +52,6 @@ namespace Samples.Configuration.Web.Controllers
             {
                 name = "SettingsYaml:Key",
                 key = _configuration["SettingsYaml:Key"]
-            });
-        }
-
-        [HttpGet("options")]
-        public IActionResult GetFromOptions()
-        {
-            return Ok(new
-            {
-                name = "SettingsOptions:Key",
-                key = _options.Value.Key
             });
         }
     }

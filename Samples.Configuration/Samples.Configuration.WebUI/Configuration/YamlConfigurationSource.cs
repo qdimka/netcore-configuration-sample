@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Samples.Configuration.Web.Configuration
+namespace Samples.Configuration.WebUI.Configuration
 {
     public class YamlConfigurationSource : IConfigurationSource
     {
