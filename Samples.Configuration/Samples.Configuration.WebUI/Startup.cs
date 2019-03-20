@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Samples.Configuration.WebUI.Options;
+using Samples.Configuration.WebUI.Services;
 
 namespace Samples.Configuration.WebUI
 {
@@ -27,9 +28,20 @@ namespace Samples.Configuration.WebUI
 
             #region NamedOptions
 
-            services.Configure<NamedOptions>("development", Configuration.GetSection("NamedOptions"));
-            services.Configure<NamedOptions>("production", Configuration.GetSection("NamedOptions"));
+            services.Configure<NamedOptions>("development", 
+                Configuration.GetSection("FirstNamedOptions"));
             
+            services.Configure<NamedOptions>("production", 
+                Configuration.GetSection("SecondNamedOptions"));
+            
+            #endregion
+
+            #region Services
+
+            services.AddSingleton<SampleSingletonService>();
+            services.AddScoped<SampleScopedService>();
+            services.AddScoped<SampleNamedOptionsService>();
+
             #endregion
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

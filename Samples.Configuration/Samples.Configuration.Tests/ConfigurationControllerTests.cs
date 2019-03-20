@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Samples.Configuration.Tests.Common;
-using Samples.Configuration.Web;
+using Samples.Configuration.WebUI;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -27,7 +27,6 @@ namespace Samples.Configuration.Tests
         [InlineData("api/configuration/secret", "I am Secret")]
         [InlineData("api/configuration/environment", "I am Environment")]
         [InlineData("api/configuration/yaml", "I am Yaml")]
-        [InlineData("api/configuration/options", "I am options")]
         public async Task Configuration_Should_Contains_Expected_Value(string url, string expectedValue)
         {
             var result = await _client.GetAsync(url);
