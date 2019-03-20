@@ -28,6 +28,8 @@ namespace Samples.Configuration.WebUI
 
             #region NamedOptions
 
+            services.Configure<NamedOptions>(Configuration.GetSection("DefaultOptions"));
+            
             services.Configure<NamedOptions>("development", 
                 Configuration.GetSection("FirstNamedOptions"));
             

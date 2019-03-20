@@ -29,7 +29,6 @@ namespace Samples.Configuration.WebUI.Controllers
                 Name = "Singleton",
                 FromOptions = _singletonService.FromOptions(),
                 FromOptionsMonitor = _singletonService.FromOptionsMonitor(),
-                FromSnapshot = _singletonService.FromSnapshot()
             });
         }
         
@@ -50,7 +49,7 @@ namespace Samples.Configuration.WebUI.Controllers
         {
             return Ok(new
             {
-                Name = "Singleton",
+                Name = "Named",
                 First = _namedOptionsService.GetDevelopment(),
                 Second = _namedOptionsService.GetProduction()
             });

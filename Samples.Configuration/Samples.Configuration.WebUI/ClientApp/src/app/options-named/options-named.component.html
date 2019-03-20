@@ -1,1 +1,9 @@
-
+<div class="options" *ngIf="model">
+  <div class="title">{{model.name}}</div>
+  <div class="item">
+    {{model.first.name}}
+  </div>
+  <div class="item">
+    {{model.second.name}}
+  </div>
+</div>
