@@ -3,4 +3,10 @@
   .body-content {
     padding-top: 50px;
   }
+
+  .input:disabled, .input:read-only {
+    background-color: unset !important;
+    opacity: 1 !important;
+    border: 2px solid #9ba59d !important;
+  }
 }

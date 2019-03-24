@@ -28,9 +28,6 @@ namespace Samples.Configuration.WebUI.Services
             => _options.Value;
 
         public SettingsOptions FromOptionsMonitor()
-        {
-            Thread.Sleep(5000);
-            return _optionsMonitor.CurrentValue;
-        } 
+            => _optionsMonitor.CurrentValue;
     }
 }

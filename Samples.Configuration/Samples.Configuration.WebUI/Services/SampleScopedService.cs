@@ -8,7 +8,6 @@ namespace Samples.Configuration.WebUI.Services
         private readonly IOptions<SettingsOptions> _options;
         private readonly IOptionsMonitor<SettingsOptions> _optionsMonitor;
         private readonly IOptionsSnapshot<SettingsOptions> _optionsSnapshot;
-
         public SampleScopedService(IOptions<SettingsOptions> options,
             IOptionsMonitor<SettingsOptions> optionsMonitor,
             IOptionsSnapshot<SettingsOptions> optionsSnapshot)

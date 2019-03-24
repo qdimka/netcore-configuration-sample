@@ -11,6 +11,8 @@ namespace Samples.Configuration.WebUI
 {
     public class Startup
     {
+        private readonly IHostingEnvironment _environment;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

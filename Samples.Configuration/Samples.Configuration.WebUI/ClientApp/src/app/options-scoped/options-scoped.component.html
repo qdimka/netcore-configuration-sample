@@ -1,12 +1,17 @@
 <div class="options" *ngIf="model">
   <div class="title">{{model.name}}</div>
-  <div class="item">
-    {{model.fromOptions.key}}
-  </div>
-  <div class="item">
-    {{model.fromOptionsMonitor.key}}
-  </div>
-  <div class="item">
-    {{model.fromSnapshot.key}}
-  </div>
+  <form #myForm="ngForm" novalidate>
+    <div class="form-group">
+      <label>IOptions<<b>T</b>>.Value</label>
+      <input class="form-control" name="first" [(ngModel)]="model.fromOptions.key" readonly />
+    </div>
+    <div class="form-group">
+      <label>IOptionsMonitor<<b>T</b>>.CurrentValue</label>
+      <input class="form-control" name="second" [(ngModel)]="model.fromOptionsMonitor.key" readonly />
+    </div>
+    <div class="form-group">
+      <label>IOptionsSnapshot<<b>T</b>>.Value</label>
+      <input class="form-control" name="third" [(ngModel)]="model.fromSnapshot.key" readonly />
+    </div>
+  </form>
 </div>

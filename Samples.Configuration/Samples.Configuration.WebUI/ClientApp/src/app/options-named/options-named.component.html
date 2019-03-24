@@ -1,9 +1,13 @@
 <div class="options" *ngIf="model">
   <div class="title">{{model.name}}</div>
-  <div class="item">
-    {{model.first.name}}
-  </div>
-  <div class="item">
-    {{model.second.name}}
-  </div>
+  <form #myForm="ngForm" novalidate>
+    <div class="form-group">
+      <label>IOptionsSnapshot<<b>T</b>>>.Get("development")</label>
+      <input class="form-control" name="first" [(ngModel)]="model.first.name" readonly />
+    </div>
+    <div class="form-group">
+      <label>IOptionsSnapshot<<b>T</b>>.Get("production")</label>
+      <input class="form-control" name="second" [(ngModel)]="model.second.name" readonly />
+    </div>
+  </form>
 </div>
