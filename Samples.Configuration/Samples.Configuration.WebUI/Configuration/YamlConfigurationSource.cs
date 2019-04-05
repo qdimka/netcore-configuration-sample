@@ -2,23 +2,18 @@
 
 namespace Samples.Configuration.WebUI.Configuration
 {
-    public class YamlConfigurationSource : IConfigurationSource
+    public class YamlConfigurationSource : FileConfigurationSource
     {
-        private readonly string _fileName;
-
         public YamlConfigurationSource(string fileName)
         {
-            _fileName = fileName;
+            Path = fileName;
+            ReloadOnChange = true;
         }
 
-        public IConfigurationProvider Build(IConfigurationBuilder builder)
+        public override IConfigurationProvider Build(IConfigurationBuilder builder)
         {
-            var fullFileName = builder
-                .GetFileProvider()
-                .GetFileInfo(_fileName)
-                .PhysicalPath;
-
-            return new YamlConfigurationProvider(fullFileName);
+            this.EnsureDefaults(builder);
+            return new YamlConfigurationProvider(this);
         }
     }
 }

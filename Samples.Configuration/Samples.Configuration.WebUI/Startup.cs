@@ -24,19 +24,23 @@ namespace Samples.Configuration.WebUI
         {
             #region Options
 
-            services.Configure<SettingsOptions>(Configuration.GetSection("SettingsOptions"));
+            services
+                .AddOptions<SettingsOptions>()
+                .Bind(Configuration.GetSection("SettingsOptions"))
+                .ValidateDataAnnotations();
 
             #endregion
 
             #region NamedOptions
 
-            services.Configure<NamedOptions>(Configuration.GetSection("DefaultOptions"));
-            
-            services.Configure<NamedOptions>("development", 
+            services.Configure<NamedOptions>("main", 
                 Configuration.GetSection("FirstNamedOptions"));
             
-            services.Configure<NamedOptions>("production", 
+            services.Configure<NamedOptions>("reserve", 
                 Configuration.GetSection("SecondNamedOptions"));
+            
+            services.PostConfigure<NamedOptions>("main",
+                opt => { opt.Name = "PostConfigureOptions";});
             
             #endregion
 

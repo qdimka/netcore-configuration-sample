@@ -6,30 +6,37 @@ using YamlDotNet.Serialization;
 
 namespace Samples.Configuration.WebUI.Configuration
 {
-    public class YamlConfigurationProvider : ConfigurationProvider
+    public class YamlConfigurationProvider : FileConfigurationProvider
     {
         private readonly string _filePath;
 
-        public YamlConfigurationProvider(string filePath)
+        public YamlConfigurationProvider(FileConfigurationSource source) 
+            : base(source)
         {
-            _filePath = filePath
-                        ?? throw new ArgumentNullException(nameof(filePath));
         }
 
-        public override void Load()
+        public override void Load(Stream stream)
         {
-            var yamlText = File.ReadAllText(_filePath);
-            var yamlObject = new DeserializerBuilder()
-                .Build()
-                .Deserialize(new StringReader(yamlText)) as IDictionary<object, object>;
-
-            Data = new Dictionary<string, string>();
-
-            foreach (var pair in yamlObject)
+            if (stream.CanSeek)
             {
-                FillData(String.Empty, pair);
+                stream.Seek(0L, SeekOrigin.Begin);
+                using (StreamReader streamReader = new StreamReader(stream))
+                {
+                    var fileContent = streamReader.ReadToEnd();
+                    var yamlObject = new DeserializerBuilder()
+                        .Build()
+                        .Deserialize(new StringReader(fileContent)) as IDictionary<object, object>;
+
+                    Data = new Dictionary<string, string>();
+
+                    foreach (var pair in yamlObject)
+                    {
+                        FillData(String.Empty, pair);
+                    }
+                }
             }
         }
+
 
         private void FillData(string prefix, KeyValuePair<object, object> pair)
         {

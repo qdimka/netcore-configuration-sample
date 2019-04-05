@@ -12,6 +12,7 @@ namespace Samples.Configuration.WebUI.Services
         private readonly IOptionsMonitor<SettingsOptions> _optionsMonitor;
         private readonly ILogger<SampleSingletonService> _logger;
         private IDisposable subscription;
+        
         public SampleSingletonService(IOptions<SettingsOptions> options,
             IOptionsMonitor<SettingsOptions> optionsMonitor,
             ILogger<SampleSingletonService> logger)
@@ -28,6 +29,6 @@ namespace Samples.Configuration.WebUI.Services
             => _options.Value;
 
         public SettingsOptions FromOptionsMonitor()
-            => _optionsMonitor.CurrentValue;
+            => _optionsMonitor.CurrentValue; 
     }
 }

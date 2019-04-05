@@ -12,10 +12,10 @@ namespace Samples.Configuration.WebUI.Services
             _options = options;
         }
 
-        public NamedOptions GetDevelopment()
-            => _options.Get("development");
+        public NamedOptions GetMain()
+            => _options.Get("main");
 
-        public NamedOptions GetProduction()
-            => _options.Get("production");
+        public NamedOptions GetReserve()
+            => _options.Get("reserve");
     }
 }

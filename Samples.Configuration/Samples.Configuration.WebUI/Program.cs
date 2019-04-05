@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Samples.Configuration.WebUI.Configuration;
 
 namespace Samples.Configuration.WebUI

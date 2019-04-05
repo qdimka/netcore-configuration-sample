@@ -50,8 +50,8 @@ namespace Samples.Configuration.WebUI.Controllers
             return Ok(new
             {
                 Name = "Named",
-                First = _namedOptionsService.GetDevelopment(),
-                Second = _namedOptionsService.GetProduction()
+                First = _namedOptionsService.GetMain(),
+                Second = _namedOptionsService.GetReserve()
             });
         }
     }

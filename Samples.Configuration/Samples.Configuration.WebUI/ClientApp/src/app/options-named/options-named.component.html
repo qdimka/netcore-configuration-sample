@@ -2,11 +2,11 @@
   <div class="title">{{model.name}}</div>
   <form #myForm="ngForm" novalidate>
     <div class="form-group">
-      <label>IOptionsSnapshot<<b>T</b>>>.Get("development")</label>
+      <label>IOptionsSnapshot<<b>T</b>>>.Get("main")</label>
       <input class="form-control" name="first" [(ngModel)]="model.first.name" readonly />
     </div>
     <div class="form-group">
-      <label>IOptionsSnapshot<<b>T</b>>.Get("production")</label>
+      <label>IOptionsSnapshot<<b>T</b>>.Get("reserve")</label>
       <input class="form-control" name="second" [(ngModel)]="model.second.name" readonly />
     </div>
   </form>

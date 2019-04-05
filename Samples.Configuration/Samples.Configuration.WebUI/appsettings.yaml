@@ -1,3 +1,3 @@
-SettingsYaml:
-  Key: "I am Yaml"
+SecondNamedOptions:
+  Name: "I am second_named_options"
 Text: "Text"
